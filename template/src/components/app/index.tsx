@@ -2,9 +2,10 @@ import { h, Component } from 'preact';
 import { provide } from 'preact-context-provider';
 import { withIntl } from '../../enhancers';
 import wire from 'wiretie';
-import style from './style';
 
-export default function createApp(context) {
+import * as style from './style.scss';
+
+export default function createApp(context): typeof Component {
 
 	@withIntl
 	@provide({ zimbraComponents: context.components })
@@ -26,7 +27,7 @@ export default function createApp(context) {
 							</li>
 						</ol>
 					</Sidebar>
-					<div class={style.main}>
+					<div class={style.main} >
 						Hello World
 					</div>
 				</div>

@@ -1,0 +1,17 @@
+{
+    "compilerOptions": {
+        "noImplicitAny": false,
+        "resolveJsonModule": true,
+        "experimentalDecorators": true,
+        "skipLibCheck": true,
+        "jsx": "react",
+        "jsxFactory": "h",
+        "baseUrl": ".",
+        "paths": {
+            "preact": ["node_modules/@zimbra/zimlet-cli/dist/preact"],
+            "util": ["node_modules/@zimbra/zimlet-cli/dist/util"],
+        },
+    },
+    "awesomeTypescriptLoaderOptions": {
+    },
+}

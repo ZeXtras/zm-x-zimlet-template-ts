@@ -1,13 +1,13 @@
-# zm-x-zimlet-template-default
+# zm-x-zimlet-template-ts
 
 ## Documentation
-- This is the default template for [zimlet-cli](https://github.com/zimbra/zimlet-cli).
+- This is the TypeScript template for [zimlet-cli](https://github.com/zimbra/zimlet-cli).
 
 ## Usage
 
 ``` bash
 $ npm install -g zimlet-cli
-$ zimlet create zimbra/zm-x-zimlet-template-default my-zimlet
+$ zimlet create ZeXtras/zm-x-zimlet-template-ts my-zimlet
 $ cd my-zimlet
 $ npm install
 $ npm start

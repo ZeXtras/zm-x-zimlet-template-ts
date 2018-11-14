@@ -5,7 +5,7 @@
   "license": "MIT",
   "description": "TBD",
   "main": "build/index.js",
-  "module": "src/index.js",
+  "module": "src/index.tsx",
   "scripts": {
     "build": "zimlet build",
     "watch": "zimlet watch",
@@ -20,8 +20,14 @@
   },
   "devDependencies": {
     "@zimbra/zimlet-cli": "^1.1.0",
+    "awesome-typescript-loader": "^4.0.0",
     "eslint": "^4.18.2",
-    "eslint-config-synacor": "^3.0.0"
+    "eslint-config-synacor": "^3.0.0",
+    "json-loader": "^0.5.7",
+    "node-sass": "^4.10.0",
+    "sass-loader": "^7.1.0",
+    "typescript": "^3.1.6",
+    "typings-for-css-modules-loader": "^1.7.0"
   },
   "dependencies": {
     "preact-context-provider": "^1.1.1",

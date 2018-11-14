@@ -4,15 +4,16 @@ import { SLUG } from './constants';
 import { withIntl } from './enhancers';
 import createApp from './components/app';
 
-export default function Zimlet(context) {
-	const { plugins, components } = context;
-	const exports = {};
-	const App = createApp(context);
-	
-	exports.init = function init() {
-		plugins.register('slot::menu', MenuItem);
-		plugins.register('slot::routes', Router);
-	};
+const Zimlet = (context) => {
+    const { plugins, components } = context;
+    const App = createApp(context);
+
+	const exports = {
+        init: () => {
+            plugins.register('slot::menu', MenuItem);
+            plugins.register('slot::routes', Router);
+        }
+    };
 
 	// Register a new route with the preact-router instance
 	function Router() {
@@ -28,9 +29,11 @@ export default function Zimlet(context) {
 			icon="fa:code"
 			href={`/${SLUG}`}
 		>
-			<Text id="{{name}}.menuItem" />
+			<Text id="openchat-x.menuItem" />
 		</components.MenuItem>
 	));
 
 	return exports;
 }
+
+export default Zimlet;
