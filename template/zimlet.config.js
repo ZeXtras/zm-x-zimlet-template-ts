@@ -1,7 +1,14 @@
 import path from 'path';
 
+import * as _util from '@zimbra/zimlet-cli/dist/util.js';
+
 export default function configure(config, env) {
 	//use this function to optionally mutate the webpack configuration created by zimlet-cli
+
+	/* From node_modules/@zimbra/zimlet-cli/dist/index.js */
+	var watch = env.watch || env.w || process.env.NODE_ENV === 'dev' || process.env.NODE_ENV === 'development';
+	var PROD = !watch;
+	var cssModulesRegexp = (0, _util.crossPlatformPathRegex)(/(?:([^/@]+?)(?:-(?:pages?|components?|screens?))?\/)?src\/(?:pages|components|screens)\/(.+?)(\/[a-z0-9._-]+[.](less|s?css))?$/);
 
 	config.resolve.extensions.unshift(".tsx", ".ts", ".sass");
 	config.module.rules.unshift(
@@ -25,10 +32,14 @@ export default function configure(config, env) {
 				},
 				{
 					loader: "css-loader",
-					options: { 
+					options: {
+						autoprefixer: false,
+						sourceMap: watch && !PROD,
 						modules: true,
 						namedExport: true,
 						camelCase: true,
+						localIdentRegExp: cssModulesRegexp,
+						localIdentName: "[1]_[2]_[local]",
 					}
 				},
 			]
