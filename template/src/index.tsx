@@ -29,7 +29,7 @@ const Zimlet = (context) => {
 			icon="fa:code"
 			href={`/${SLUG}`}
 		>
-			<Text id="openchat-x.menuItem" />
+			<Text id="{{name}}.menuItem" />
 		</components.MenuItem>
 	));
 

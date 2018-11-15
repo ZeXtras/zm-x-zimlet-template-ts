@@ -27,7 +27,7 @@ export default function createApp(context): typeof Component {
 							</li>
 						</ol>
 					</Sidebar>
-					<div class={style.main} >
+					<div class={style.main}>
 						Hello World
 					</div>
 				</div>
